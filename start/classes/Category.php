@@ -3,7 +3,7 @@ class Category{
 
     public static function getallCategories(){
     require_once("connect.php");
-    $sql = "SELECT Categ_id, Categ_name, SubCateg_name FROM `categories` WHERE 1";
+    $sql = "SELECT Categ_id, Categ_name, SubCateg_name FROM `categories` WHERE 1 ORDER BY Categ_name;";
     $result = $db->query($sql);
     $myarray = array();
     if($result){
