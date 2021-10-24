@@ -37,7 +37,7 @@ public static function login(){
     $myusername = mysqli_real_escape_string($db,$_POST['username']);
     $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
-    $stmt = $db->prepare("SELECT User_ID, Name FROM logintable WHERE email = ? and pass = ?;");
+    $stmt = $db->prepare("SELECT User_ID, Name, Location FROM logintable WHERE email = ? and pass = ?;");
 	$stmt->bind_param("ss",$myusername,$mypassword);
 	$stmt->execute();
     $result = $stmt->get_result();
@@ -47,6 +47,8 @@ public static function login(){
           $row = $result->fetch_row();
           $_SESSION['identity'] = $row['0'];
           $_SESSION['username'] = $row['1'];
+          $_SESSION['location'] = $row['2'];
+
 		  return $errors;  
 	  }else{
 			 

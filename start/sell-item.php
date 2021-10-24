@@ -63,7 +63,7 @@ include('templates/header.php');
 </div>
     <div class="row limited">
 <section  class="column small-12 medium-6 form">  
-    <h3>Sell a new Item</h3>
+    <h2>Sell a new Item</h2>
 <form method="POST" action="sell-item.php">
 <input type="text"  name="itemname" placeholder="Name of Item" required>
 <input type="text"  name="itemlocation" placeholder="Location" required>

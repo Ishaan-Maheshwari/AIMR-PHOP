@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <section class="column small-12 medium-6 form">  
          <h2>Login into your Account.</h2>
 <form method="POST" action="login.php">
-<input type="text" id="fname" name="username" placeholder="Email Address" required>
+<input type="text" id="fname" name="username" placeholder="Email Address" >
 <input type="password" id="lname" name="password" placeholder="Password" required>
   <input name="__csrf" type="hidden" value="<?php echo $_SESSION['token']; ?>">
   <input type="submit" value="Log In"/>
@@ -42,9 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </section> 
 <section  class="column small-12 medium-6 form">  
     <h2>Create a new Account.</h2>
-<form>
+<form method="POST" action="sign-up.php">
+<input type="text"  name="uname" placeholder="Full Name" required>
 <input type="text"  name="username" placeholder="Email Address" required>
-<input type="password"  name="password" placeholder="Password" required>
+<input type="password"  name="password" placeholder="New Password" required>
+<input type="text"  name="ulocation" placeholder="Location" required>
+<input name="__csrf" type="hidden" value="<?php echo $_SESSION['token']; ?>">
 <input type="submit" value="Sign Up"/>
 </form>
 </section> 

@@ -23,30 +23,35 @@ include('templates/header.php');
 require_once("classes/connect.php") ;
 
 $userid = $_SESSION['identity'];
-$sql = "SELECT items.ItemName, items.Itemdesc, requestlog.ReqAction, requestlog.ReqStatus, requestlog.ReqId\n"
-    . "FROM requestlog\n"
-    . "INNER JOIN items ON requestlog.ReqItem = items.ItemId\n"
-    . "WHERE requestlog.ReqBy ='".$userid."' LIMIT 0, 30 ";
+$sql = "SELECT items.ItemId, items.ItemName, COUNT( requestlog.ReqID ) AS Requests\n"
+    . "FROM test.requestlog\n"
+    . "INNER JOIN test.items ON requestlog.ReqItem = items.ItemId\n"
+    . "WHERE items.Owner = '".$userid."'\n"
+    . "AND requestlog.ReqStatus = 'PENDING'\n"
+    . "ORDER BY COUNT( requestlog.ReqID ) DESC";
 $result = $db->query($sql);
+$myarray = array();
     if($result){
         echo "<table border = '1'>";
-        echo "<tr><th>Item Name</th><th>Description</th><th>Requested For</th><th>Status</th></tr>";
+        echo "<tr><th>Item Name</th><th>Requests</th><th>Check your requests</th></tr>";
         while($row = $result->fetch_array(MYSQLI_ASSOC)) {
             echo "<tr>";
             echo "<td>".$row['ItemName']."</td>";
-            echo "<td>".$row['Itemdesc']."</td>";
-            echo "<td>".$row['ReqAction']."</td>";
-            if($row['ReqStatus'] == 'ACCEPTED'){
-                echo '<td><a href="show-details.php?Req='.$row['ReqAction'].'&&id='.$row['ReqId'].'">show details</a></td>';
+            echo "<td>".$row['Requests']."</td>";
+            if($row['Requests'] > 0){
+                echo '<td><a href="requesting-customer.php?itemid='.$row['ItemId'].'">show requests</a></td>';
             }else{
-                echo "<td>".$row['ReqStatus']."</td>";
+                echo "<td>NO Requests</td>";
+               
             }
             
             echo "</tr>";
         }
         $result->close();
         echo "</table>";
-    }
+    }else{
+            echo "No Items Requested yet!";
+        }
 ?>
 
     </div>

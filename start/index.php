@@ -31,18 +31,22 @@
         <div class="row limited">
             <button id="hamburgerBtn">&#9776</button>
             <ul id="primaryNav">
-                <li class="active"><a href="index.php">Categories</a></li>
-                <li><a href="#">Community</a></li>
+                <li class="active"><a href="index.php"><img src="templates/home.svg" height="16px" alt="HOME"></a></li>
+                <li><a href="Categories.php">Categories</a></li>
                 <li><a href="sell-item.php">Sell an Item</a></li>
-                <li><a href="#">Items rented</a></li>
+                <li><a href="my-requested-items.php">Items rented</a></li>
                 <li><a href="get-requests.php">Requests</a></li>
                 <?php if(isset($_SESSION['identity'])){
                     echo "<li><a href='profile.php'>".$_SESSION['username']."</a></li>";
                 }else{
                     echo '<li><a href="login.php">Login</a></li>';
                 }
+                if(isset($_SESSION['location'])){
+                    echo "<li><a href='#'>".$_SESSION['location']."</a></li>";
+                }else{
+                    echo '<li><a href="#">Location</a></li>';
+                }
                 ?>
-                
             </ul>
         </div>
     
