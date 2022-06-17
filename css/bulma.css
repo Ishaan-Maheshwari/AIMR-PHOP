@@ -316,6 +316,7 @@ th:not([align]) {
 
 html {
   background-color: white;
+  /* background-color: #A4D5FF; */
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -344,7 +345,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: 'Mukta', "Arial", sans-serif;
 }
 
 code,
@@ -2730,6 +2731,7 @@ div.icon-text {
 .table {
   background-color: white;
   color: #363636;
+  border-radius: 1em;
 }
 
 .table td,
@@ -2860,7 +2862,7 @@ div.icon-text {
 
 .table thead {
   /* background-color: #F6785F; */
-  background-color: #F14668;
+  background-color: #F3752C;
 }
 
 .table thead td,
@@ -5410,10 +5412,12 @@ button.dropdown-item.is-active {
 }
 
 .navbar {
-  background-color: white;
+  background-color: #FF7800;
   min-height: 3.25rem;
   position: relative;
   z-index: 30;
+  border-radius: 0.25rem;
+  font-size: 1.1rem;
 }
 
 .navbar.is-white {
@@ -6096,6 +6100,7 @@ body.has-navbar-fixed-bottom {
 }
 
 .navbar-burger {
+  align-self: center;
   color: #4a4a4a;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -6173,6 +6178,8 @@ body.has-navbar-fixed-bottom {
 a.navbar-item,
 .navbar-link {
   cursor: pointer;
+  font-weight: 300;
+  /* color: #3449a8; */
 }
 
 a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active,
@@ -6181,7 +6188,6 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 .navbar-link:hover,
 .navbar-link.is-active {
   background-color: #fafafa;
-  color: #485fc7;
 }
 
 .navbar-item {
@@ -6190,7 +6196,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 }
 
 .navbar-item img {
-  max-height: 1.75rem;
+  max-height: 2.5rem;
 }
 
 .navbar-item.has-dropdown {
@@ -6269,7 +6275,8 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     display: none;
   }
   .navbar-menu {
-    background-color: white;
+    /* background-color:#ffc9c9; */
+    background-color: #fffe8a ;
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     padding: 0.5rem 0;
   }

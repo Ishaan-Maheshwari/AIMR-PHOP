@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bulma.css">
-    <link rel="stylesheet" href=css/small.css">
+    <!-- <link rel="stylesheet" href=css/small.css"> -->
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;500;600&display=swap" rel="stylesheet">
     <title>Home</title>
 </head>
-<body>
+<body class="has-navbar-fixed-top">
     <!-- navigation starts-->
-    <nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="home.html">
-            <img src="assets/logo.png" width="52" >
+          <a class="navbar-item" href="home.html" >
+            <img src="assets/logo.png" >
           </a>
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -47,11 +50,14 @@
                     महिला समिति
                 </a>
                 <a class="navbar-item">
-                  Ganaga Devi Samiti
+                  गंगा देवी धर्मशाला समिति 
+                </a>
+                <a class="navbar-item">
+                  श्री गौरीशंकर शारडा निर्माण समिति
                 </a>
                 <hr class="navbar-divider">
                 <a class="navbar-item">
-                  Shivalaya Trust
+                  शिवालय ट्रस्ट
                 </a>
               </div>
             </div>
@@ -113,9 +119,15 @@
         </div>
       </nav>
     <!-- navigation ends -->
+
     <!-- hero starts -->
-    <img src="assets/shiv5.jpg" alt="hero">
+    <section class="hero" >
+      <img src="assets/lord-shiva.jpg" alt="hero">
+    </section>
     <!-- hero ends  -->
+    <div class="box" style="padding: 5px;">
+      <marquee behavior="scrolling" direction="left" style="color: red;"> New Updates will be shown here.</marquee>
+    </div>
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -123,7 +135,7 @@
                   <table class="table is-bordered is-striped is-hoverable is-fullwidth">
                       <thead>
                           <tr>
-                              <th>News / Updates</th>
+                              <th align="center">News / Updates</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -153,7 +165,7 @@
                     <table class="table is-bordered is-striped is-hoverable is-fullwidth">
                         <thead>
                             <tr>
-                                <th>Upcoming Events</th>
+                                <th align="center">Upcoming Events</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -228,17 +240,5 @@
       </footer>
       <!-- Footer Ends  -->
 </body>
-<script>
-$(document).ready(function() {
-
-    // Check for click events on the navbar burger icon
-    $(".navbar-burger").click(function() {
-  
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        $(".navbar-burger").toggleClass("is-active");
-        $(".navbar-menu").toggleClass("is-active");
-  
-    });
-  });
-</script>
+<script src="js/myjs.js"></script>
 </html>
